@@ -94,27 +94,26 @@ void P() {
 void combinatorics_menu()
 {
     int way;
-    cout << "Калькулятор формул комбинаторики\n";
-    cout << "1. Размещение с повторением\n";
-    cout << "2. Размещение без повторений\n";
-    cout << "3. Сочетание с повторением\n";
-    cout << "4. Сочетание без повторений\n";
-    cout << "5. Перестановки\n";
-    cout << "0. Вернуться в главное меню\n";
-    cin >> way;
-    switch (way) {
-    case 0: {
-        cout << "Выход из калькулятора формул комбинаторики" << endl << endl;
-        return;
-    }
-    case 1: A_repeate(); break;
-    case 2: A_no_repeate(); break;
-    case 3: C_repeate(); break;
-    case 4: C_no_repeate(); break;
-    case 5: P(); break;
-    default:
-    {
-        cout << "Ошибка!Неверный ввод";
-    }
+    while (true) {
+        cout << "Калькулятор формул комбинаторики\n";
+        cout << "1. Размещение с повторением\n";
+        cout << "2. Размещение без повторений\n";
+        cout << "3. Сочетание с повторением\n";
+        cout << "4. Сочетание без повторений\n";
+        cout << "5. Перестановки\n";
+        cout << "0. Вернуться в главное меню\n";
+        cin >> way;
+        switch (way) {
+        case 0: return;
+        case 1: A_repeate(); break;
+        case 2: A_no_repeate(); break;
+        case 3: C_repeate(); break;
+        case 4: C_no_repeate(); break;
+        case 5: P(); break;
+        default:
+        {
+            cout << "Ошибка!Неверный ввод";
+        }
+        }
     }
 }
