@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Файлы">
+      <UniqueIdentifier>{9ec78adc-e2c4-46ce-a460-9f932adadf9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы\Комбинаторика">
+      <UniqueIdentifier>{8150596d-6e53-4db6-9dd2-0203dca9ba95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы\Дроби">
+      <UniqueIdentifier>{2f7afe12-58db-4db3-b81a-6219ba83d5df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы\Функции">
+      <UniqueIdentifier>{25ebfd25-b986-4a95-8add-27e890736d08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы\Матрицы">
+      <UniqueIdentifier>{891352a6-7d9e-4c80-ab57-8cd691b3eeff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы\Теория вероятностей">
+      <UniqueIdentifier>{c93af8aa-85b4-4573-893e-9a5bca5b4979}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы\Многочлены">
+      <UniqueIdentifier>{43500d23-54fc-4375-a235-666a998f9a87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Главный код">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="polynomial_header.h">
+      <Filter>Файлы\Многочлены</Filter>
+    </ClInclude>
+    <ClInclude Include="probality_header.h">
+      <Filter>Файлы\Теория вероятностей</Filter>
+    </ClInclude>
+    <ClInclude Include="matrix_header.h">
+      <Filter>Файлы\Матрицы</Filter>
+    </ClInclude>
+    <ClInclude Include="combinator.h">
+      <Filter>Файлы\Комбинаторика</Filter>
+    </ClInclude>
+    <ClInclude Include="fraction_header.h">
+      <Filter>Файлы\Дроби</Filter>
+    </ClInclude>
+    <ClInclude Include="functions_header.h">
+      <Filter>Файлы\Функции</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="calc.cpp">
+      <Filter>Главный код</Filter>
+    </ClCompile>
+    <ClCompile Include="polynomial_menu_realisation.cpp">
+      <Filter>Файлы\Многочлены</Filter>
+    </ClCompile>
+    <ClCompile Include="polynomial_func_realisation.cpp">
+      <Filter>Файлы\Многочлены</Filter>
+    </ClCompile>
+    <ClCompile Include="probality_realisation.cpp">
+      <Filter>Файлы\Теория вероятностей</Filter>
+    </ClCompile>
+    <ClCompile Include="matrix_realisation.cpp">
+      <Filter>Файлы\Матрицы</Filter>
+    </ClCompile>
+    <ClCompile Include="combinator_real.cpp">
+      <Filter>Файлы\Комбинаторика</Filter>
+    </ClCompile>
+    <ClCompile Include="fraction_realisation.cpp">
+      <Filter>Файлы\Дроби</Filter>
+    </ClCompile>
+    <ClCompile Include="functions_realisation.cpp">
+      <Filter>Файлы\Функции</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
