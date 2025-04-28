@@ -103,6 +103,7 @@ void combinatorics_menu()
         cout << "5. Перестановки\n";
         cout << "0. Вернуться в главное меню\n";
         cin >> way;
+
         switch (way) {
         case 0: return;
         case 1: A_repeate(); break;
