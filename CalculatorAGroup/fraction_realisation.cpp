@@ -69,7 +69,7 @@ void input()
 	if (input.empty())
 	{
 		cout << "Пустой ввод" << endl;
-		return;
+		drobi_menu();
 	}
 	if (input[i] == '-')
 	{
@@ -95,7 +95,7 @@ void input()
 		if (i >= input.length() || input[i] != '/')
 		{
 			cout << "Неправильная форма ввода дроби" << endl;
-			return;
+			drobi_menu();
 		}
 		i++;
 		d = 0;
@@ -107,7 +107,7 @@ void input()
 		if (i != input.length())
 		{
 			cout << "Лишние символы" << endl;
-			back();
+			drobi_menu();
 		}
 		n = w * d + n;
 		d = d;
@@ -125,7 +125,7 @@ void input()
 		if (i != input.length())
 		{
 			cout << "Лишние символы" << endl;
-			back();
+			drobi_menu();
 		}
 		d = d;
 	}
@@ -137,12 +137,12 @@ void input()
 	else
 	{
 		cout << "Неправильная форма ввода дроби" << endl;
-		back();
+		drobi_menu();
 	}
 	if (d == 0)
 	{
 		cout << "Знаменатель не может быть равен 0" << endl;
-		back();
+		drobi_menu();
 	}
 	if (neg)
 	{
@@ -308,68 +308,64 @@ void toten()
 		cout << "Дробь " << i + 1 << " в десятичной форме равна " << ten << endl;
 	}
 }
-void back()
-{
-	cout << "Введите любой символ чтобы вернуться обратно в меню" << endl;
-	string t;
-	cin >> t;
-	drobi_menu();
-}
 void drobi_menu()
 {
-	int m;
-	cout << "Калькулятор обыкновенных дробей" << endl;
-	cout << "1.Сложение" << endl;
-	cout << "2.Вычитание" << endl;
-	cout << "3.Умножение" << endl;
-	cout << "4.Деление" << endl;
-	cout << "5.Сравнение" << endl;
-	cout << "6.Приведение к десятичной форме" << endl;
-	cout << "0.Вернуться в главное меню" << endl;
-	cin >> m;
-	switch (m)
+	int m=-1;
+	while(m!=0)
 	{
-	case 0:
-	{
-		cout << "Выход из калькулятора дробей" << endl << endl;
-		return;
+		cout << endl;
+		cout << "Калькулятор обыкновенных дробей" << endl;
+		cout << "1.Сложение" << endl;
+		cout << "2.Вычитание" << endl;
+		cout << "3.Умножение" << endl;
+		cout << "4.Деление" << endl;
+		cout << "5.Сравнение" << endl;
+		cout << "6.Приведение к десятичной форме" << endl;
+		cout << "0.Вернуться в главное меню" << endl;
+		cin >> m;
+		switch (m)
+		{
+		case 0:
+		{
+			cout << "Выход из калькулятора дробей" << endl << endl;
+			return;
+		}
+		case 1:
+		{
+			add();;
+			break;
+		}
+		case 2:
+		{
+			sub();
+			break;
+		}
+		case 3:
+		{
+			multi();
+			break;
+		}
+		case 4:
+		{
+			div();
+			break;
+		}
+		case 5:
+		{
+			comp();
+			break;
+		}
+		case 6:
+		{
+			toten();
+			break;
+		}
+		default:
+		{
+			cout << "Ошибка!Неверный ввод";
+		}
+		}
 	}
-	case 1:
-	{
-		add();
-		break;
-	}
-	case 2:
-	{
-		sub();
-		break;
-	}
-	case 3:
-	{
-		multi();
-		break;
-	}
-	case 4:
-	{
-		div();
-		break;
-	}
-	case 5:
-	{
-		comp();
-		break;
-	}
-	case 6:
-	{
-		toten();
-		break;
-	}
-	default:
-	{
-		cout << "Ошибка!Неверный ввод";
-	}
-	}
-	back();
 }
 
 

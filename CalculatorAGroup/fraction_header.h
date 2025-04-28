@@ -16,5 +16,4 @@ void multi();
 void div();
 void comp();
 void toten();
-void back();
 void drobi_menu();

@@ -10,17 +10,22 @@ void prob()
 	double m, n;
 	cout << "Введите благоприятные исходы(m) ";
 	cin >> m;
+	if (m <= 0)
+	{
+		cout << "m не может быть меньше или равен 0" << endl;
+		probality_menu();
+	}
 	cout << "Введите все возможные исходы(n) ";
 	cin >> n;
-	if (n == 0)
+	if (n <=0)
 	{
-		cout << "n не может быть равен 0" << endl;
+		cout << "n не может быть меньше или равен 0" << endl;
 		probality_menu();
 	}
 	double prob;
 	prob = m / n;
 	cout << "Вероятность: " << prob << endl;
-	back1();
+	probality_menu();
 }
 void var()
 {
@@ -53,7 +58,7 @@ void var()
 		vr += (x[i] - m) * (x[i] - m) * p[i];
 	}
 	cout << "Дисперсия: " << vr << endl;
-	back1();
+	probality_menu();
 }
 void expval()
 {
@@ -67,7 +72,7 @@ void expval()
 	}
 	double x[s];
 	double p[s];
-	cout << "Введите значения(x) и соответсвующие вероятности(p): ";
+	cout << "Введите значения(x) и соответсвующие вероятности(p): "<<endl;
 	for (int i = 0; i < n; i++)
 	{
 		cout << "x[" << i << "] = ";
@@ -81,52 +86,49 @@ void expval()
 		exp += x[i] * p[i];
 	}
 	cout << "Математическое ожидание: " << exp << endl;
-	back1();
+	probality_menu();
 }
 void probality_menu()
 {
-	int k;
-	cout << "Калькулятор теории вероятности и математической статистики" << endl;
-	cout << "1.Вероятность m/n" << endl;
-	cout << "2.Дисперсия для дискретного распределения" << endl;
-	cout << "3.Математическое ожидание для дискретного распределения" << endl;
-	cout << "4.Выход" << endl;
-	cout << "Выберите пункт меню: ";
-	cin >> k;
-	switch (k)
+	int k=-1;
+	while (k != 0)
 	{
-	case 1:
-	{
-		prob();
-		break;
+		cout << endl;
+		cout << "Калькулятор теории вероятности и математической статистики" << endl;
+		cout << "1.Вероятность m/n" << endl;
+		cout << "2.Дисперсия для дискретного распределения" << endl;
+		cout << "3.Математическое ожидание для дискретного распределения" << endl;
+		cout << "0.Выход" << endl;
+		cout << "Выберите пункт меню: ";
+		cin >> k;
+		switch (k)
+		{
+		case 1:
+		{
+			prob();
+			break;
+		}
+		case 2:
+		{
+			var();
+			break;
+		}
+		case 3:
+		{
+			expval();
+			break;
+		}
+		case 0:
+		{
+			cout << "Возвращение в основное меню" << endl;
+			break;
+		}
+		default:
+		{
+			cout << "Неверный выбор(введите 0-3)" << endl;
+			break;
+		}
+		}
 	}
-	case 2:
-	{
-		var();
-		break;
-	}
-	case 3:
-	{
-		expval();
-		break;
-	}
-	case 4:
-	{
-		cout << "Возвращение в основное меню" << endl;
-		break;
-	}
-	default:
-	{
-		cout << "Неверный выбор(введите 1-3)" << endl;
-		break;
-	}
-	}
-}
-void back1()
-{
-	int k = 0;
-	cout << "Введите любой символ чтобы вернуться в меню ";
-	cin >> k;
-	probality_menu();
 }
 
