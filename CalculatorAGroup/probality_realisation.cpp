@@ -13,19 +13,18 @@ void prob()
 	if (m <= 0)
 	{
 		cout << "m не может быть меньше или равен 0" << endl;
-		probality_menu();
+		return;
 	}
 	cout << "Введите все возможные исходы(n) ";
 	cin >> n;
 	if (n <=0)
 	{
 		cout << "n не может быть меньше или равен 0" << endl;
-		probality_menu();
+		return;
 	}
 	double prob;
 	prob = m / n;
 	cout << "Вероятность: " << prob << endl;
-	probality_menu();
 }
 void var()
 {
@@ -35,7 +34,7 @@ void var()
 	if (n <= 0 || n > 100)
 	{
 		cout << "Некорректное количество " << endl;
-		probality_menu();
+		return;
 	}
 	double x[s];
 	double p[s];
@@ -58,7 +57,6 @@ void var()
 		vr += (x[i] - m) * (x[i] - m) * p[i];
 	}
 	cout << "Дисперсия: " << vr << endl;
-	probality_menu();
 }
 void expval()
 {
@@ -68,7 +66,7 @@ void expval()
 	if (n <= 0 || n > 100)
 	{
 		cout << "Некорректное количество" << endl;
-		probality_menu();
+		return;
 	}
 	double x[s];
 	double p[s];
@@ -86,12 +84,11 @@ void expval()
 		exp += x[i] * p[i];
 	}
 	cout << "Математическое ожидание: " << exp << endl;
-	probality_menu();
 }
 void probality_menu()
 {
 	int k=-1;
-	while (k != 0)
+	while (k!=0)
 	{
 		cout << endl;
 		cout << "Калькулятор теории вероятности и математической статистики" << endl;
@@ -103,6 +100,11 @@ void probality_menu()
 		cin >> k;
 		switch (k)
 		{
+		case 0:
+		{
+			cout << "Возвращение в основное меню" << endl << endl;
+			return;
+		}
 		case 1:
 		{
 			prob();
@@ -118,15 +120,9 @@ void probality_menu()
 			expval();
 			break;
 		}
-		case 0:
-		{
-			cout << "Возвращение в основное меню" << endl<<endl;
-			return;
-		}
 		default:
 		{
 			cout << "Неверный выбор(введите 0-3)" << endl;
-			break;
 		}
 		}
 	}
