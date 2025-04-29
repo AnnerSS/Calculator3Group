@@ -120,8 +120,8 @@ void probality_menu()
 		}
 		case 0:
 		{
-			cout << "Возвращение в основное меню" << endl;
-			break;
+			cout << "Возвращение в основное меню" << endl<<endl;
+			return;
 		}
 		default:
 		{
