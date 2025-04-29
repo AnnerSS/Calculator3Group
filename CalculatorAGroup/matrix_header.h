@@ -1,6 +1,4 @@
 #pragma once
-#pragma once
-
 
 double** create_array(int n, int m);
 void input_array(int n, int m, double** array);
