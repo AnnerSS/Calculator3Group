@@ -145,7 +145,7 @@ void draw(SDL_Renderer* renderer, int type) {
 
 
     for (double x = -(SCREEN_WIDTH / STEP); x <= (SCREEN_WIDTH / STEP); x += 0.001) {
-        double y;
+        double y = 0;
         switch (type) {
         case 1: y = polynom(x); break;
         case 2: y = stepen(x); break;
@@ -155,8 +155,8 @@ void draw(SDL_Renderer* renderer, int type) {
         case 6: y = cosinus(x); break;
         }
 
-        int scrX = SCREEN_WIDTH / 2 + (x * STEP);
-        int scrY = SCREEN_HEIGHT / 2 - (y * STEP);
+        double scrX = SCREEN_WIDTH / 2.0 + (x * STEP);
+        double scrY = SCREEN_HEIGHT / 2.0 - (y * STEP);
 
         if (scrX >= 0 && scrX < SCREEN_WIDTH && scrY >= 0 && scrY < SCREEN_HEIGHT) {
             SDL_RenderDrawPoint(renderer, scrX, scrY);
@@ -436,7 +436,6 @@ void findExtremums(double (*f)(double), double a, double b, double step, double 
 }
 
 void run_extremum_finding() {
-    int choice;
     double a, b;
     const double step = 0.1;
     double minima[MAX_EXTREMA], maxima[MAX_EXTREMA];
