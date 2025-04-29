@@ -144,7 +144,7 @@ void draw(SDL_Renderer* renderer, int type) {
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
 
 
-    for (double x = -(SCREEN_WIDTH / STEP); x <= (SCREEN_WIDTH / STEP); x += 0.01) {
+    for (double x = -(SCREEN_WIDTH / STEP); x <= (SCREEN_WIDTH / STEP); x += 0.001) {
         double y;
         switch (type) {
         case 1: y = polynom(x); break;
