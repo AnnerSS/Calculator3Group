@@ -5,7 +5,7 @@
 
 extern int num[s];
 extern int den[s];
-extern int c;
+extern int co;
 
 int nod(int a, int b);
 void sim(int& n, int& d);

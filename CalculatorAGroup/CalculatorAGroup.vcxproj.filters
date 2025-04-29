@@ -73,4 +73,7 @@
       <Filter>Файлы\Функции</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
 </Project>

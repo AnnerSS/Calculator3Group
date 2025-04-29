@@ -7,6 +7,8 @@
 #include "polynomial_header.h"
 #include "probality_header.h"
 #include "functions_header.h"
+#include <SDL.h>
+#include "SDL_ttf.h"
 
 
 using namespace std;
@@ -26,15 +28,15 @@ void main_menu()
 		cout << "5. Калькулятор многочленов" << endl;
 		cout << "6. Работа с функциями" << endl;
 		cout << "0. Выход из программы" << endl;
-		cout << endl;
+		cout << "Ваш выбор (0-6): ";
 
 		cin >> x;
 
 		while (x < 0 || x > 6) {
-			cout << "Некорректный ввод!" << endl;
+			cout << "Некорректный ввод! Ваш выбор (0-6): ";
 			cin >> x;
 		}
-
+		cout << endl;
 		switch (x)
 		{
 		case 0:
@@ -58,7 +60,7 @@ void main_menu()
 			combinatorics_menu();
 			break;
 		}
-		case 4: // добавил переход в меню вероятностей. Там пусто, если что
+		case 4: 
 			probality_menu();
 			break;
 		case 5:
@@ -75,9 +77,7 @@ void main_menu()
 	}
 }
 
-int main() {
-	
-	//SetConsoleOutputCP(CP_UTF8);
+int main(int argc, char* argv[]) {
 	setlocale(LC_ALL, "ru");
 	main_menu();
 	return 0;

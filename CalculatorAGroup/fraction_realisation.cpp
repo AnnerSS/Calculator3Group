@@ -10,7 +10,7 @@ using namespace std;
 
 int num[s];
 int den[s];
-int c = 0;
+int co = 0;
 
 
 int nod(int a, int b)
@@ -149,12 +149,12 @@ void input()
 		n = -n;
 	}
 	sim(n, d);
-	num[c] = n;
-	den[c] = d;
-	c++;
+	num[co] = n;
+	den[co] = d;
+	co++;
 }
 void add() {
-	c = 0;
+	co = 0;
 	int k = 0;
 	cout << "Введите количество дробей для сложения: ";
 	cin >> k;
@@ -168,8 +168,8 @@ void add() {
 	int td = 1;
 	for (int i = 0; i < k; i++) {
 		input();
-		int n = num[c - 1];
-		int d = den[c - 1];
+		int n = num[co - 1];
+		int d = den[co - 1];
 		tn = tn * d + n * td;
 		td = td * d;
 		sim(tn, td);
@@ -180,7 +180,7 @@ void add() {
 }
 void sub()
 {
-	c = 0;
+	co = 0;
 	int k = 0;
 	cout << "Введите количество дробей для вычитания ";
 	cin >> k;
@@ -192,13 +192,13 @@ void sub()
 		cin.ignore();
 	}
 	input();
-	int tn = num[c - 1];
-	int td = den[c - 1];
+	int tn = num[co - 1];
+	int td = den[co - 1];
 	for (int i = 0;i < k - 1;i++)
 	{
 		input();
-		int n = num[c - 1];
-		int d = den[c - 1];
+		int n = num[co - 1];
+		int d = den[co - 1];
 		tn = tn * d - n * td;
 		td = td * d;
 		sim(tn, td);
@@ -209,7 +209,7 @@ void sub()
 }
 void multi()
 {
-	c = 0;
+	co = 0;
 	int k = 0;
 	cout << "Введите количество дробей для умножения ";
 	cin >> k;
@@ -225,8 +225,8 @@ void multi()
 	for (int i = 0;i < k;i++)
 	{
 		input();
-		tn *= num[c - 1];
-		td *= den[c - 1];
+		tn *= num[co - 1];
+		td *= den[co - 1];
 		sim(tn, td);
 	}
 	cout << "Результат умножения ";
@@ -235,7 +235,7 @@ void multi()
 }
 void div()
 {
-	c = 0;
+	co = 0;
 	int k = 0;
 	cout << "Введите количество дробей для деления ";
 	cin >> k;
@@ -247,13 +247,13 @@ void div()
 		cin.ignore();
 	}
 	input();
-	int tn = num[c - 1];
-	int td = den[c - 1];
+	int tn = num[co - 1];
+	int td = den[co - 1];
 	for (int i = 0;i < k - 1;i++)
 	{
 		input();
-		int n = num[c - 1];
-		int d = den[c - 1];
+		int n = num[co - 1];
+		int d = den[co - 1];
 		if (d == 0 || n == 0)
 		{
 			cout << "Знаменатель/числитель равен 0";
@@ -269,7 +269,7 @@ void div()
 }
 void comp()
 {
-	c = 0;
+	co = 0;
 	cout << "Сравнение дробей" << endl;
 	cin.ignore();
 	for (int i = 0;i < 2;i++)
@@ -304,7 +304,7 @@ void toten()
 	for (int i = 0;i < k;i++)
 	{
 		input();
-		double ten = (double)num[c - 1] / den[c - 1];
+		double ten = (double)num[co - 1] / den[co - 1];
 		cout << "Дробь " << i + 1 << " в десятичной форме равна " << ten << endl;
 	}
 }
